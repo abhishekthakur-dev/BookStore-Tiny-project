@@ -1,0 +1,300 @@
+{
+  "project_name": "BookNest – Online Bookstore",
+  "app_type": "e-commerce",
+  "theme_preference": "light-warm-editorial",
+  "core_aesthetic_archetype": "Warm Editorial Bookstore (Cream Paper & Rich Ink)",
+  "emotional_tone": "Inviting, literary, tactile, calm, intellectual sanctuary",
+  "typography": {
+    "heading_font": "Lora, Playfair Display, serif",
+    "body_font": "Plus Jakarta Sans, Instrument Sans, sans-serif",
+    "mono_font": "JetBrains Mono, monospace",
+    "text_hierarchy": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight font-medium leading-[1.1]",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-serif tracking-tight font-medium leading-snug",
+      "h3": "text-xl sm:text-2xl font-serif font-medium",
+      "h4": "text-lg sm:text-xl font-sans font-semibold",
+      "body": "text-base sm:text-sm font-sans leading-relaxed text-stone-700",
+      "caption": "text-xs font-mono uppercase tracking-[0.2em] text-stone-500"
+    },
+    "font_imports": [
+      "@fontsource-variable/lora",
+      "@fontsource-variable/playfair-display",
+      "@fontsource-variable/instrument-sans",
+      "@fontsource-variable/jetbrains-mono"
+    ]
+  },
+  "color_palette": {
+    "background_paper": "#FAF7F2",
+    "background_paper_elevated": "#FFFDF9",
+    "background_paper_soft": "#F4EFE6",
+    "ink_primary": "#1C1917",
+    "ink_secondary": "#44403C",
+    "ink_muted": "#78716C",
+    "accent_terracotta": "#B45309",
+    "accent_terracotta_hover": "#92400E",
+    "accent_forest": "#2D4A3E",
+    "accent_gold": "#D97706",
+    "border_parchment": "#E7E2D8",
+    "border_parchment_strong": "#D5CEBF",
+    "badge_tag_bg": "#EDE7DC",
+    "badge_tag_fg": "#44403C"
+  },
+  "layout_and_grids": {
+    "container_max_width": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "editorial_header_height": "h-20",
+    "hero_grid_mode": "Tetris Asymmetric: 12-column grid with featured curated volume on the left (7 cols) and warm bookstack storytelling with reading metrics on right (5 cols)",
+    "catalog_layout": "Sidebar filter (col-span-12 lg:col-span-3) + Book Grid (col-span-12 lg:col-span-9 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6)",
+    "book_card_aspect_ratio": "Book jackets in crisp vertical proportions (approx 2:3 or 3:4) with spine shadow illusion and subtle deckled edge effect",
+    "cart_drawer": "Side slide-over sheet or dedicated clean review view with line items, quantity steppers, subtotal, shipping calculation ($0 demo indicator), and instant demo checkout trigger",
+    "checkout_modal_or_view": "Clearly labeled 'Demo Bookstore Checkout' with 2-step simulated flow: Shipping Address + Payment Simulation ('No real card charged') + Order Confirmation Receipt with simulated tracking and book quote"
+  },
+  "component_hierarchy": [
+    {
+      "name": "NavigationHeader",
+      "description": "Editorial navigation bar with BookNest logo (serif), category quick-links, live search bar with keyboard shortcut, and Cart trigger button displaying dynamic item counter.",
+      "testid": "nav-header",
+      "key_elements": [
+        {"element": "Brand Logo", "testid": "nav-brand-logo"},
+        {"element": "Search Input", "testid": "nav-search-input"},
+        {"element": "Category Links", "testid": "nav-category-link"},
+        {"element": "Cart Button", "testid": "nav-cart-button"},
+        {"element": "Cart Item Count Badge", "testid": "nav-cart-count"}
+      ]
+    },
+    {
+      "name": "HeroCuratorSpotlight",
+      "description": "Warm bookstore mood piece featuring 'Book of the Month', editorial excerpt, author signature typography, star reviews, and immediate 'Read Excerpt' / 'Add to Cart' actions.",
+      "testid": "hero-spotlight-section",
+      "key_elements": [
+        {"element": "Hero Tagline", "testid": "hero-tagline"},
+        {"element": "Hero Featured Book Card", "testid": "hero-featured-book"},
+        {"element": "Hero Add to Cart", "testid": "hero-add-to-cart-btn"},
+        {"element": "Curator Note Box", "testid": "hero-curator-note"}
+      ]
+    },
+    {
+      "name": "CatalogFilterBar",
+      "description": "Category pills ('All Books', 'Fiction & Literature', 'Philosophy & Mind', 'Design & Architecture', 'Poetry', 'Culinary & Living', 'History'), search refinement, price sorting, and instant availability toggles.",
+      "testid": "catalog-filter-bar",
+      "key_elements": [
+        {"element": "Category Filter Tab", "testid": "category-tab"},
+        {"element": "Sort Dropdown", "testid": "sort-by-select"},
+        {"element": "Active Filters Clear", "testid": "clear-filters-btn"},
+        {"element": "Total Results Counter", "testid": "catalog-count-label"}
+      ]
+    },
+    {
+      "name": "BookCard",
+      "description": "Tactile editorial book card displaying cover artwork with realistic drop shadow, title in serif, author name, category tag, rating, price formatted in USD, and 'Quick View' + 'Add to Cart' buttons.",
+      "testid": "book-card",
+      "key_elements": [
+        {"element": "Book Cover Image", "testid": "book-cover-image"},
+        {"element": "Book Title Link", "testid": "book-title"},
+        {"element": "Book Author", "testid": "book-author"},
+        {"element": "Book Price", "testid": "book-price"},
+        {"element": "Book Add to Cart Button", "testid": "book-add-cart-btn"},
+        {"element": "Book Detail Trigger", "testid": "book-quickview-btn"}
+      ]
+    },
+    {
+      "name": "BookDetailModal",
+      "description": "Deep-dive reader drawer/dialog with large cover illustration, full blurb, ISBN, page count, publication year, editorial review quote, format selector (Hardcover, Paperback, Collector's Cloth), quantity control, and Add to Cart.",
+      "testid": "book-detail-modal",
+      "key_elements": [
+        {"element": "Detail Title", "testid": "book-detail-title"},
+        {"element": "Detail Synopsis", "testid": "book-detail-synopsis"},
+        {"element": "Detail Format Selector", "testid": "book-format-select"},
+        {"element": "Detail Add to Cart", "testid": "book-detail-add-cart-btn"},
+        {"element": "Detail Close", "testid": "book-detail-close-btn"}
+      ]
+    },
+    {
+      "name": "CartDrawer",
+      "description": "Off-canvas sliding cart showing items, quantity increment/decrement, remove item, subtotal summary, and prominent 'Proceed to Demo Checkout' action.",
+      "testid": "cart-drawer",
+      "key_elements": [
+        {"element": "Cart Item Row", "testid": "cart-item-row"},
+        {"element": "Quantity Increase", "testid": "cart-qty-inc"},
+        {"element": "Quantity Decrease", "testid": "cart-qty-dec"},
+        {"element": "Remove Item", "testid": "cart-item-remove"},
+        {"element": "Cart Subtotal", "testid": "cart-subtotal-price"},
+        {"element": "Checkout Button", "testid": "cart-checkout-btn"}
+      ]
+    },
+    {
+      "name": "DemoCheckoutFlow",
+      "description": "A polished, explicitly stated 'Demo Checkout (No real payment)' modal with prefill button for quick testing, shipping address input, payment method simulation (Credit Card / Bookstore Gift Card), order summary, and place order button.",
+      "testid": "demo-checkout-modal",
+      "key_elements": [
+        {"element": "Demo Notice Banner", "testid": "checkout-demo-banner"},
+        {"element": "Prefill Test Data Button", "testid": "checkout-prefill-btn"},
+        {"element": "Shipping Name Input", "testid": "checkout-input-name"},
+        {"element": "Shipping Email Input", "testid": "checkout-input-email"},
+        {"element": "Shipping Address Input", "testid": "checkout-input-address"},
+        {"element": "Submit Order Button", "testid": "checkout-submit-btn"}
+      ]
+    },
+    {
+      "name": "OrderConfirmationReceipt",
+      "description": "Warm vintage invoice-style receipt with simulated Order #BN-XXXXX, delivery estimate, order items list, total paid ($0.00 demo or simulated total), celebratory confetti/reading quote, and 'Return to Library' button.",
+      "testid": "order-confirmation-receipt",
+      "key_elements": [
+        {"element": "Order ID Label", "testid": "order-id-label"},
+        {"element": "Order Total Paid", "testid": "order-total-price"},
+        {"element": "Continue Shopping Button", "testid": "order-continue-shopping-btn"}
+      ]
+    }
+  ],
+  "seeded_catalog_data": [
+    {
+      "id": "book-1",
+      "title": "The Architecture of Silence",
+      "author": "Elena Rostova",
+      "price": 28.50,
+      "format": "Hardcover Linen",
+      "category": "Design & Architecture",
+      "rating": 4.9,
+      "reviews_count": 142,
+      "pages": 312,
+      "year": 2024,
+      "isbn": "978-0-394-58211-1",
+      "cover_url": "https://images.unsplash.com/photo-1711185898226-beea7eee0611?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzl8MHwxfHNlYXJjaHwxfHxib29rJTIwY292ZXIlMjBub3ZlbHxlbnwwfHx8fDE3OTAyMjU3ODd8MA&ixlib=rb-4.1.0&q=85",
+      "description": "A quiet investigation into spaces designed for contemplation, monastic aesthetics, and the restorative power of empty rooms in modern metropolitan sprawl.",
+      "quote": "To build silence is to build an altar for the human spirit."
+    },
+    {
+      "id": "book-2",
+      "title": "Letters to a Wild Pear Tree",
+      "author": "Julian Vance",
+      "price": 21.00,
+      "format": "Deckled Paperback",
+      "category": "Poetry",
+      "rating": 4.8,
+      "reviews_count": 89,
+      "pages": 176,
+      "year": 2023,
+      "isbn": "978-1-56689-440-2",
+      "cover_url": "https://images.unsplash.com/photo-1696456959130-083552f0bb07?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzl8MHwxfHNlYXJjaHw0fHxib29rJTIwY292ZXIlMjBub3ZlbHxlbnwwfHx8fDE3OTAyMjU3ODd8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Lyrical prose poems meditating on seasonal solitude, Mediterranean orchard landscapes, and the lingering echoes of lost correspondences.",
+      "quote": "Autumn arrives like an unwritten letter slipped beneath the door."
+    },
+    {
+      "id": "book-3",
+      "title": "Pride & Prejudices: The Peacock Edition",
+      "author": "Jane Austen",
+      "price": 36.00,
+      "format": "Embossed Collector's Edition",
+      "category": "Fiction & Literature",
+      "rating": 5.0,
+      "reviews_count": 487,
+      "pages": 448,
+      "year": 2022,
+      "isbn": "978-0-141-43951-8",
+      "cover_url": "https://images.unsplash.com/photo-1763768861268-cb6b54173dbf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzl8MHwxfHNlYXJjaHwzfHxib29rJTIwY292ZXIlMjBub3ZlbHxlbnwwfHx8fDE3OTAyMjU3ODd8MA&ixlib=rb-4.1.0&q=85",
+      "description": "A breathtaking heritage binding of Austen’s beloved masterpiece with gold foil feather stampings and archival ribbon bookmark.",
+      "quote": "There is a stubbornness about me that never can bear to be frightened at the will of others."
+    },
+    {
+      "id": "book-4",
+      "title": "The First New Universe",
+      "author": "Dr. Miriam Thorne",
+      "price": 24.90,
+      "format": "Trade Paperback",
+      "category": "Philosophy & Mind",
+      "rating": 4.7,
+      "reviews_count": 64,
+      "pages": 288,
+      "year": 2024,
+      "isbn": "978-0-262-53901-2",
+      "cover_url": "https://images.unsplash.com/photo-1529521818954-c76995518833?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzl8MHwxfHNlYXJjaHwyfHxib29rJTIwY292ZXIlMjBub3ZlbHxlbnwwfHx8fDE3OTAyMjU3ODd8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Exploring quantum ontology, cosmology, and the poetic imagination required to contemplate dimensions beyond human senses.",
+      "quote": "The cosmos is not merely stranger than we imagine; it is stranger than we are equipped to desire."
+    },
+    {
+      "id": "book-5",
+      "title": "The Memory of Leaves",
+      "author": "Carlos Zafón",
+      "price": 19.50,
+      "format": "Paperback",
+      "category": "Fiction & Literature",
+      "rating": 4.9,
+      "reviews_count": 210,
+      "pages": 360,
+      "year": 2021,
+      "isbn": "978-0-06-058942-5",
+      "cover_url": "https://images.pexels.com/photos/1637455/pexels-photo-1637455.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Set in misty Barcelona courtyards, an antiquarian bookseller stumbles upon a cursed manuscript that alters the past of those who read it.",
+      "quote": "Books are mirrors: you only see in them what you already have inside you."
+    },
+    {
+      "id": "book-6",
+      "title": "Botanical Tables & Feasts",
+      "author": "Camille Dupré",
+      "price": 32.00,
+      "format": "Clothbound Hardcover",
+      "category": "Culinary & Living",
+      "rating": 4.8,
+      "reviews_count": 95,
+      "pages": 240,
+      "year": 2023,
+      "isbn": "978-1-61769-012-9",
+      "cover_url": "https://images.unsplash.com/photo-1556566952-11eff3d06ed4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MjJ8MHwxfHNlYXJjaHwzfHxzdGFjayUyMHZpbnRhZ2UlMjBib29rcyUyMHJlYWRpbmd8ZW58MHx8fHwxNzkwMjI1NzkzfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Wild fermentation, edible floriculture, and intimate candlelit dinners through the four seasons in the French countryside.",
+      "quote": "A meal shared among books is nourishment twice blessed."
+    },
+    {
+      "id": "book-7",
+      "title": "The Lost Cartographies",
+      "author": "Sterling Hayes",
+      "price": 29.00,
+      "format": "Hardcover",
+      "category": "History",
+      "rating": 4.6,
+      "reviews_count": 53,
+      "pages": 384,
+      "year": 2023,
+      "isbn": "978-0-7123-5334-2",
+      "cover_url": "https://images.unsplash.com/photo-1529590003495-b2646e2718bf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MjJ8MHwxfHNlYXJjaHwxfHxzdGFjayUyMHZpbnRhZ2UlMjBib29rcyUyMHJlYWRpbmd8ZW58MHx8fHwxNzkwMjI1NzkzfDA&ixlib=rb-4.1.0&q=85",
+      "description": "The forgotten maritime charts of the Indian Ocean and the navigators who drew mythic sea beasts where the abyss begins.",
+      "quote": "Every boundary on a map is a monument to human longing."
+    },
+    {
+      "id": "book-8",
+      "title": "Meditations in the Dusk",
+      "author": "Arthur St. Claire",
+      "price": 18.00,
+      "format": "Pocket Paperback",
+      "category": "Philosophy & Mind",
+      "rating": 4.9,
+      "reviews_count": 178,
+      "pages": 192,
+      "year": 2022,
+      "isbn": "978-0-19-953832-4",
+      "cover_url": "https://images.unsplash.com/photo-1613577553731-e102e5de62f5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MjJ8MHwxfHNlYXJjaHwyfHxzdGFjayUyMHZpbnRhZ2UlMjBib29rcyUyMHJlYWRpbmd8ZW58MHx8fHwxNzkwMjI1NzkzfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Quiet philosophical essays on slowing down in an accelerationist society, cultivating private gardens, and the craft of re-reading.",
+      "quote": "The book you open in sorrow will speak to you in a voice the joyful never hear."
+    }
+  ],
+  "editorial_imagery": {
+    "storefront_atmosphere": "https://images.unsplash.com/photo-1623771702313-39dc4f71d275?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHw0fHx3YXJtJTIwYm9va3N0b3JlJTIwbGlicmFyeXxlbnwwfHx8fDE3OTAyMjU3ODd8MA&ixlib=rb-4.1.0&q=85",
+    "reading_nook": "https://images.unsplash.com/photo-1709385283538-d3258a461032?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwzfHx3YXJtJTIwYm9va3N0b3JlJTIwbGlicmFyeXxlbnwwfHx8fDE3OTAyMjU3ODd8MA&ixlib=rb-4.1.0&q=85",
+    "vintage_stacked_window": "https://images.pexels.com/photos/11340666/pexels-photo-11340666.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "motion_and_interactions": {
+    "book_card_hover": "transform: translateY(-4px) rotate(-0.5deg); transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;",
+    "cart_drawer_animation": "slide in from right using Tailwind transform translate-x-0 with subtle parchment backdrop blur",
+    "toast_feedback": "Use Sonner toast with warm cream background, stone border, and custom book bookmark icon for 'Added to your book satchel'",
+    "filter_transitions": "Smooth fade and scale with CSS opacity/transform (0.2s ease-out)"
+  },
+  "GENERAL_UI_UX_DESIGN_GUIDELINES": [
+    "Warm Editorial bookstore atmosphere: Cream paper tones (#FAF7F2), deep charcoal ink (#1C1917), terracotta/amber accents (#B45309). Avoid generic purple gradients or stark AI neon.",
+    "No full-screen dark gradients. Light theme with tactile paper textures and warm parchment borders.",
+    "Every book card MUST feature crisp typography, rating stars, price, category pill, and quick add-to-cart with immediate feedback.",
+    "Search input must support instantaneous client-side filtering across book title, author, and description with clean highlight or counter.",
+    "Demo checkout MUST be clearly branded with a disclaimer pill: 'Demo Mode — No real charges will be made'. Provide a 1-click 'Prefill Demo Data' button to make testing frictionless for the user.",
+    "Order confirmation screen must simulate a printed vintage bookstore receipt with order number, estimated reading delivery, item list, and return to catalog button.",
+    "All interactive elements MUST include explicit data-testid attributes conforming to role-based kebab-case naming.",
+    "Responsive navigation with mobile drawer and desktop quick links. Cart count badge updates automatically in header with pulse animation.",
+    "Preserve public URL compatibility: https://booknest-18.preview.emergentagent.com"
+  ]
+}
